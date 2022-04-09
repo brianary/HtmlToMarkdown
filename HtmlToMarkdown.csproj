@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PackageType>Template</PackageType>
     <PackageVersion>1.0</PackageVersion>
-    <PackageId>PSModuleTemplate</PackageId>
+    <PackageId>HtmlToMarkdown</PackageId>
     <Title>PowerShell binary module</Title>
     <Authors>Brian Lalonde</Authors>
     <Description>A template for creating a binary module for PowerShell.</Description>
@@ -21,3 +21,4 @@
   </ItemGroup>
 
 </Project>
+

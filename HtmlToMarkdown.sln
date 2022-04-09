@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{75E8ACE7-9BE5-477B-8ECC-D13E4B6D0018}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PSModuleTemplate", "src\PSModuleTemplate\PSModuleTemplate.fsproj", "{177D8365-0F55-48CD-A4BC-FF158A6D9AD5}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HtmlToMarkdown", "src\HtmlToMarkdown\HtmlToMarkdown.fsproj", "{177D8365-0F55-48CD-A4BC-FF158A6D9AD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,3 +37,4 @@ Global
 		{177D8365-0F55-48CD-A4BC-FF158A6D9AD5} = {75E8ACE7-9BE5-477B-8ECC-D13E4B6D0018}
 	EndGlobalSection
 EndGlobal
+

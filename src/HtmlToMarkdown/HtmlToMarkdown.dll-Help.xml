@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Convert-HtmlToMarkdown</command:name>
+      <command:verb>Convert</command:verb>
+      <command:noun>HtmlToMarkdown</command:noun>
+      <maml:description>
+        <maml:para>Converts HTML to Markdown.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>{{ Fill in the Description }}</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Convert-HtmlToMarkdown</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="CodeDefault">
+          <maml:name>DefaultCodeBlockLanguage</maml:name>
+          <maml:description>
+            <maml:para>Option to set the default code block language for Github style markdown if class based language markers are not available.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="GFM">
+          <maml:name>GithubFlavored</maml:name>
+          <maml:description>
+            <maml:para>Github style markdown for br, pre and table.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="InputObject, OuterHtml">
+          <maml:name>Html</maml:name>
+          <maml:description>
+            <maml:para>HTML to convert.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Bullets">
+          <maml:name>ListBulletChar</maml:name>
+          <maml:description>
+            <maml:para>Sets the bullet character to use for unordered lists.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Char</command:parameterValue>
+          <dev:type>
+            <maml:name>Char</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>'-'</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="PassThroughElements, KeepTags, KeepElements">
+          <maml:name>PassThroughTags</maml:name>
+          <maml:description>
+            <maml:para>Pass a list of tags to pass through as-is without any processing.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="StripComments">
+          <maml:name>RemoveComments</maml:name>
+          <maml:description>
+            <maml:para>Remove comment tags with text.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AutoLink">
+          <maml:name>SmartHrefHandling</maml:name>
+          <maml:description>
+            <maml:para>Outputs link as auto-linking text (not an explicit link) when the text matches the link.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="TableHeaderDefault">
+          <maml:name>TableWithoutHeaderRowHandling</maml:name>
+          <maml:description>
+            <maml:para>What to do about tables without a header row. Default: first row will be used as header row. EmptyRow: an empty header row is created.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">EmptyRow</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">TableWithoutHeaderRowHandlingOption</command:parameterValue>
+          <dev:type>
+            <maml:name>TableWithoutHeaderRowHandlingOption</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Default</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="UnknownElements">
+          <maml:name>UnknownTags</maml:name>
+          <maml:description>
+            <maml:para>What to do with unknown tags: PassThrough includes it as is, Drop removes it, Bypass ignores it, and Raise throws an exception.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">PassThrough</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Drop</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Bypass</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Raise</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">UnknownTagsOption</command:parameterValue>
+          <dev:type>
+            <maml:name>UnknownTagsOption</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>PassThrough</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AllowlistUriSchemes">
+          <maml:name>WhitelistUriSchemes</maml:name>
+          <maml:description>
+            <maml:para>Specify which schemes (without trailing colon) are to be allowed for links and images. Empty string allows unknown schemes.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="CodeDefault">
+        <maml:name>DefaultCodeBlockLanguage</maml:name>
+        <maml:description>
+          <maml:para>Option to set the default code block language for Github style markdown if class based language markers are not available.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="GFM">
+        <maml:name>GithubFlavored</maml:name>
+        <maml:description>
+          <maml:para>Github style markdown for br, pre and table.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="InputObject, OuterHtml">
+        <maml:name>Html</maml:name>
+        <maml:description>
+          <maml:para>HTML to convert.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Bullets">
+        <maml:name>ListBulletChar</maml:name>
+        <maml:description>
+          <maml:para>Sets the bullet character to use for unordered lists.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Char</command:parameterValue>
+        <dev:type>
+          <maml:name>Char</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>'-'</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="PassThroughElements, KeepTags, KeepElements">
+        <maml:name>PassThroughTags</maml:name>
+        <maml:description>
+          <maml:para>Pass a list of tags to pass through as-is without any processing.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="StripComments">
+        <maml:name>RemoveComments</maml:name>
+        <maml:description>
+          <maml:para>Remove comment tags with text.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AutoLink">
+        <maml:name>SmartHrefHandling</maml:name>
+        <maml:description>
+          <maml:para>Outputs link as auto-linking text (not an explicit link) when the text matches the link.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="TableHeaderDefault">
+        <maml:name>TableWithoutHeaderRowHandling</maml:name>
+        <maml:description>
+          <maml:para>What to do about tables without a header row. Default: first row will be used as header row. EmptyRow: an empty header row is created.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">TableWithoutHeaderRowHandlingOption</command:parameterValue>
+        <dev:type>
+          <maml:name>TableWithoutHeaderRowHandlingOption</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Default</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="UnknownElements">
+        <maml:name>UnknownTags</maml:name>
+        <maml:description>
+          <maml:para>What to do with unknown tags: PassThrough includes it as is, Drop removes it, Bypass ignores it, and Raise throws an exception.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UnknownTagsOption</command:parameterValue>
+        <dev:type>
+          <maml:name>UnknownTagsOption</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>PassThrough</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AllowlistUriSchemes">
+        <maml:name>WhitelistUriSchemes</maml:name>
+        <maml:description>
+          <maml:para>Specify which schemes (without trailing colon) are to be allowed for links and images. Empty string allows unknown schemes.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; '&lt;h1&gt;On Board&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;Ford&lt;li&gt;Zaphod&lt;li&gt;Marvin&lt;/ul&gt;' |Convert-HtmlToMarkdown
+
+# On Board
+
+- Ford
+- Zaphod
+- Marvin</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+</helpItems>

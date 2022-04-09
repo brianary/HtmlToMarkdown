@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="86.666656mm"
+   height="80mm"
+   viewBox="0 0 86.666656 80"
+   version="1.1"
+   id="svg122"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="HtmlToMarkdown.svg"
+   inkscape:export-filename="A:\HtmlToMarkdown\HtmlToMarkdown.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview124"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="86.66666mm"
+     inkscape:zoom="3.1108586"
+     inkscape:cx="129.3855"
+     inkscape:cy="144.33314"
+     inkscape:window-width="3440"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs119">
+    <color-profile
+       name="sRGB-IEC61966-2.1"
+       xlink:href="file:///C:/WINDOWS/system32/spool/drivers/color/sRGB%20Color%20Space%20Profile.icm"
+       id="color-profile39842" />
+  </defs>
+  <g
+     inkscape:label="background"
+     inkscape:groupmode="layer"
+     id="layer1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="world">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25.4px;line-height:1.25;font-family:sans-serif;fill:#26b9e8;fill-opacity:1;stroke:#26b9e8;stroke-width:0.264583;stroke-opacity:1"
+       x="48.479382"
+       y="49.329899"
+       id="text5616"><tspan
+         sodipodi:role="line"
+         id="tspan5614"
+         style="font-size:25.4px;stroke-width:0.264583;stroke:#26b9e8;stroke-opacity:1;fill:#26b9e8;fill-opacity:1"
+         x="48.479382"
+         y="49.329899">🌐</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="clamp">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:50.8px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="10.376287"
+       y="60.641754"
+       id="text1802"
+       inkscape:export-filename="A:\HtmlToMarkdown\HtmlToMarkdown.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan1800"
+         style="font-size:50.8px;stroke-width:0.264583"
+         x="10.376287"
+         y="60.641754">🗜️</tspan></text>
+  </g>
+</svg>

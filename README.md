@@ -1,30 +1,27 @@
-PSModuleTemplate
-================
+HtmlToMarkdown
+==============
 
 <!-- To publish to PowerShell Gallery, commit an update to the .psd1 file -->
-<!-- img src="PSModuleTemplate.svg" alt="PSModuleTemplate icon" align="right" / -->
+<img src="HtmlToMarkdown.svg" alt="HtmlToMarkdown icon" align="right" />
 
 <!-- Optional badges: -->
-[![PowerShell Edition](https://img.shields.io/badge/PSEdition-Desktop%2FCore-blue.svg)](https://www.powershellgallery.com/packages/PSModuleTemplate/)
-[![PowerShell Version](https://img.shields.io/badge/PowerShell-5.1+%20%28WPS%2FPSC%29-blue.svg)](https://www.powershellgallery.com/packages/PSModuleTemplate/)
-<!-- [![PowerShell Platform](https://img.shields.io/powershellgallery/p/PSModuleTemplate)](https://www.powershellgallery.com/packages/PSModuleTemplate/) -->
-<!-- [![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/PSModuleTemplate)](https://www.powershellgallery.com/packages/PSModuleTemplate/) -->
-<!-- [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/PSModuleTemplate)](https://www.powershellgallery.com/packages/PSModuleTemplate/) -->
-<!-- [![Actions Status](https://github.com/AuthorName/PSModuleTemplate/workflows/.NET%20Core/badge.svg)](https://github.com/AuthorName/PSModuleTemplate/actions) -->
+[![PowerShell Edition](https://img.shields.io/badge/PSEdition-Desktop%2FCore-blue.svg)](https://www.powershellgallery.com/packages/HtmlToMarkdown/)
+[![PowerShell Version](https://img.shields.io/badge/PowerShell-5.1+%20%28WPS%2FPSC%29-blue.svg)](https://www.powershellgallery.com/packages/HtmlToMarkdown/)
+[![PowerShell Platform](https://img.shields.io/powershellgallery/p/HtmlToMarkdown)](https://www.powershellgallery.com/packages/HtmlToMarkdown/)
+[![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/HtmlToMarkdown)](https://www.powershellgallery.com/packages/HtmlToMarkdown/)
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/HtmlToMarkdown)](https://www.powershellgallery.com/packages/HtmlToMarkdown/)
+[![Actions Status](https://github.com/AuthorName/HtmlToMarkdown/workflows/.NET%20Core/badge.svg)](https://github.com/AuthorName/HtmlToMarkdown/actions)
 
-{{ Add description here }}
+Converts HTML to Markdown/CommonMark.
 
-<!-- include installation instruction -->
-<!-- To install: `Install-Module PSModuleTemplate` -->
-
-<!-- Consider using LICEcap (cinst licecap) to capture a GIF animation of a small PowerShell window showing your module in use. -->
+To install: `Install-Module HtmlToMarkdown`
 
 Cmdlets
 -------
 
 Documentation is automatically generated using [platyPS](https://github.com/PowerShell/platyPS) (`.\doc.cmd`).
 
-- [Get-Foo](docs/Get-Foo.md)
+- [Convert-HtmlToMarkdown](docs/Convert-HtmlToMarkdown.md)
 
 Tests
 -----
