@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PublishTrimmed>true</PublishTrimmed>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="GetFooCommand.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildProjectName).psd1" Pack="true" CopyToOutputDirectory="Always" />
+    <None Include="$(MSBuildProjectName).dll-Help.xml" Pack="true" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+  <Target Name="SetAssemblyVersion" BeforeTargets="GetAssemblyVersion">
+    <Exec Command='pwsh -noni -nop -c "Import-LocalizedData -BindingVariable m -FileName $(MSBuildProjectName); (gv m -va).ModuleVersion"'
+        ConsoleToMSBuild="true" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="Version" />
+    </Exec>
+  </Target>
+
+  <Target Name="doc" DependsOnTargets="Documentation" />
+
+  <Target Name="Documentation" DependsOnTargets="Publish">
+    <Copy SourceFiles="$(OutputPath)\publish\FSharp.Core.dll"
+        DestinationFolder="$(OutputPath)" />
+    <Exec Command='pwsh -noni -nop -c "Import-Module (Resolve-Path $(OutputPath)*.psd1); New-MarkdownHelp -Module $(MSBuildProjectName) -OutputFolder ..\..\docs -ea 0; Update-MarkdownHelp ..\..\docs; New-ExternalHelp ..\..\docs -OutputPath . -Force"'
+        IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
+  </Target>
+
+  <Target Name="test" DependsOnTargets="Pester" />
+
+  <Target Name="Pester" DependsOnTargets="Publish" Condition="'$(Configuration)' == 'Debug'">
+    <Copy SourceFiles="$(OutputPath)\publish\FSharp.Core.dll"
+        DestinationFolder="$(OutputPath)" />
+    <Exec Command='pwsh -noni -nop -c "cd ..\..; Invoke-Pester"'
+        IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
+    <Exec Command='powershell -noni -nop -c "cd ..\..; Invoke-Pester"'
+        IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" Condition=" '$(OS)' == 'Windows_NT' " />
+  </Target>
+
+  <ItemGroup>
+    <PSModulePath Include="$(PSModulePath)" Exclude="C:\Program Files\**;C:\Windows\**;C:\ProgramData\chocolatey\**" />
+  </ItemGroup>
+
+</Project>

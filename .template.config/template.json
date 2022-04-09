@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Brian Lalonde",
+    "classifications": [ "Console" ],
+    "name": "PowerShell binary module",
+    "identity": "PSModuleTemplate.FSharp",
+    "groupIdentity":"PSModuleTemplate",
+    "shortName": "psmod",
+    "tags": {
+      "language": "F#",
+      "type":"project"
+    },
+    "sourceName": "PSModuleTemplate",
+    "preferNameDirectory": true,
+    "defaultName": "PSModuleTemplate",
+    "sources":[{"exclude": [
+        "PSModuleTemplate.csproj",
+        ".git/**/*",
+        ".ionide/**/*",
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json"
+    ]}],
+    "symbols":{
+      "moduleid": {
+        "type": "generated",
+        "generator": "guid",
+        "replaces":"f5c914f0-8410-48a6-8321-6fe8b4e80cf3",
+        "parameters": {
+          "format":"N"
+        }
+      },
+      "authorname": {
+        "type": "parameter",
+        "defaultValue": "Alan Smithee",
+        "replaces":"AuthorName"
+      }
+    }
+  }

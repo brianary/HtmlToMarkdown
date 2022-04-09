@@ -1,0 +1,30 @@
+﻿# EditorConfig is awesome: http://EditorConfig.org
+
+# last word for the project
+root = true
+
+# defaults
+[*]
+indent_style             = space
+indent_size              = 4
+tab_width                = 4
+end_of_line              = crlf
+charset                  = utf-8
+trim_trailing_whitespace = true
+insert_final_newline     = true
+max_line_length          = 80
+
+[*.{fs,fsx}]
+indent_style = space
+
+[*.ps1]
+indent_style = tab
+
+# git
+[{.gitattributes,CODEOWNERS}]
+charset = utf-8
+
+# CSS https://www.w3.org/International/questions/qa-utf8-bom.en#bytheway
+# JSON https://tools.ietf.org/html/rfc8259#section-8.1
+[*.{css,json}]
+charset = utf-8
