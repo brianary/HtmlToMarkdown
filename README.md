@@ -10,11 +10,14 @@ HtmlToMarkdown
 [![PowerShell Platform](https://img.shields.io/powershellgallery/p/HtmlToMarkdown)](https://www.powershellgallery.com/packages/HtmlToMarkdown/)
 [![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/HtmlToMarkdown)](https://www.powershellgallery.com/packages/HtmlToMarkdown/)
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/HtmlToMarkdown)](https://www.powershellgallery.com/packages/HtmlToMarkdown/)
-[![Actions Status](https://github.com/AuthorName/HtmlToMarkdown/workflows/.NET%20Core/badge.svg)](https://github.com/AuthorName/HtmlToMarkdown/actions)
+[![Actions Status](https://github.com/brianary/HtmlToMarkdown/workflows/.NET%20Core/badge.svg)](https://github.com/AuthorName/HtmlToMarkdown/actions)
 
-Converts HTML to Markdown/CommonMark.
+Converts HTML to Markdown/CommonMark using [ReverseMarkdown](https://github.com/mysticmind/reversemarkdown-net),
+which uses the [HTML Agility Pack](https://html-agility-pack.net/).
 
 To install: `Install-Module HtmlToMarkdown`
+
+![example usage of HtmlToMarkdown](HtmlToMarkdown.gif)
 
 Cmdlets
 -------

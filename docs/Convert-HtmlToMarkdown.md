@@ -26,7 +26,7 @@ Convert-HtmlToMarkdown -Html <String> [-DefaultCodeBlockLanguage <String>] [-Git
 
 ### Example 1
 ```powershell
-PS C:\> '<h1>On Board</h1><ul><li>Ford<li>Zaphod<li>Marvin</ul>' |Convert-HtmlToMarkdown
+'<h1>On Board</h1><ul><li>Ford<li>Zaphod<li>Marvin</ul>' |Convert-HtmlToMarkdown
 ```
 
 ```output
@@ -35,6 +35,18 @@ PS C:\> '<h1>On Board</h1><ul><li>Ford<li>Zaphod<li>Marvin</ul>' |Convert-HtmlTo
 - Ford
 - Zaphod
 - Marvin
+```
+
+### Example 2
+```powershell
+Invoke-RestMethod https://google.com/ |Convert-HtmlToCommonMark -UnknownTags Bypass
+```
+
+```output
+1. [Search](https://www.google.com/webhp?tab=ww)
+2. [Images](https://www.google.com/imghp?hl=en&tab=wi)
+3. [Maps](https://maps.google.com/maps?hl=en&tab=wl)
+...
 ```
 
 ## PARAMETERS
