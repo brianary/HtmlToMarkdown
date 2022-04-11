@@ -2,7 +2,7 @@
 # and https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest
 @{
 RootModule = 'HtmlToMarkdown.dll'
-ModuleVersion = '1.0.0'
+ModuleVersion = '1.0.1'
 CompatiblePSEditions = @('Core','Desktop')
 GUID = 'b9799ff4-2f34-4787-8e26-5f6f4db55e60'
 Author = 'Brian Lalonde'
