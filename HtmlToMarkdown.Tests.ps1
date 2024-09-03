@@ -26,7 +26,7 @@ Describe $module.Name {
 	Context 'Convert-HtmlToMarkdown cmdlet' -Tag Cmdlet,Convert-HtmlToMarkdown {
 		It "Given HTML '<Html>', '<Expected>' should be returned." -TestCases @(
 			@{ Html = '<p>Hello, world</p>'; Expected = 'Hello, world' }
-			@{ Html = '<h1>On Board</h1><ul><li>Ford<li>Zaphod<li>Marvin</ul>'; Expected = "# On Board${eol}- Ford${eol}- Zaphod${eol}- Marvin" }
+			@{ Html = '<h1>On Board</h1><ul><li>Ford<li>Zaphod<li>Marvin</ul>'; Expected = "# On Board${eol}${eol}- Ford${eol}- Zaphod${eol}- Marvin" }
 		) {
 			Param($Html,$Expected)
 			$Html |HtmlToMarkdown\Convert-HtmlToMarkdown |Should -BeExactly $Expected
