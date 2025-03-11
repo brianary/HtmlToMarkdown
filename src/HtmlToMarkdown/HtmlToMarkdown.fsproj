@@ -42,8 +42,10 @@
     <Copy SourceFiles="$(OutputPath)\publish\FSharp.Core.dll" DestinationFolder="$(OutputPath)" />
     <Copy SourceFiles="$(OutputPath)\publish\HtmlAgilityPack.dll" DestinationFolder="$(OutputPath)" />
     <Copy SourceFiles="$(OutputPath)\publish\ReverseMarkdown.dll" DestinationFolder="$(OutputPath)" />
-    <Exec Command="pwsh -noni -nop -c &quot;cd ..\..; Invoke-Pester&quot;" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
-    <Exec Command="powershell -noni -nop -c &quot;cd ..\..; Invoke-Pester&quot;" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" Condition=" '$(OS)' == 'Windows_NT' " />
+    <Exec Command='pwsh -noni -nop -c "cd ..\..; Invoke-Pester -Configuration @{TestResult=@{Enabled=!0}}"'
+      IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
+    <Exec Command='powershell -noni -nop -c "cd ..\..; Invoke-Pester -Configuration @{TestResult=@{Enabled=!0}}"'
+      IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" Condition=" '$(OS)' == 'Windows_NT' " />
   </Target>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
 .*/
+!.github/
 !.template.config/
 bin/
 obj/
