@@ -16,7 +16,8 @@ Converts HTML to Markdown.
 Convert-HtmlToMarkdown -Html <String> [-DefaultCodeBlockLanguage <String>] [-GithubFlavored]
  [-ListBulletChar <Char>] [-RemoveComments] [-SmartHrefHandling] [-UnknownTags <UnknownTagsOption>]
  [-PassThroughTags <String[]>] [-WhitelistUriSchemes <String[]>]
- [-TableWithoutHeaderRowHandling <TableWithoutHeaderRowHandlingOption>] [<CommonParameters>]
+ [-TableWithoutHeaderRowHandling <TableWithoutHeaderRowHandlingOption>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -195,6 +196,21 @@ Specify which schemes (without trailing colon) are to be allowed for links and i
 Type: String[]
 Parameter Sets: (All)
 Aliases: AllowlistUriSchemes
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named

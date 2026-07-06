@@ -70,17 +70,16 @@ type ConvertHtmlToMarkdownCommand () =
     // optional: setup before pipeline input starts (e.g. Name is set, InputObject is not)
     override x.BeginProcessing () =
         base.BeginProcessing ()
-        x.Converter
-            <- Converter
-                <| Config(DefaultCodeBlockLanguage      = x.DefaultCodeBlockLanguage,
-                          GithubFlavored                = x.GithubFlavored,
-                          ListBulletChar                = x.ListBulletChar,
-                          RemoveComments                = x.RemoveComments,
-                          SmartHrefHandling             = x.SmartHrefHandling,
-                          UnknownTags                   = x.UnknownTags,
-                          PassThroughTags               = x.PassThroughTags,
-                          WhitelistUriSchemes           = x.WhitelistUriSchemes,
-                          TableWithoutHeaderRowHandling = x.TableWithoutHeaderRowHandling)
+        let cfg = Config(DefaultCodeBlockLanguage      = x.DefaultCodeBlockLanguage,
+                         GithubFlavored                = x.GithubFlavored,
+                         ListBulletChar                = x.ListBulletChar,
+                         RemoveComments                = x.RemoveComments,
+                         SmartHrefHandling             = x.SmartHrefHandling,
+                         UnknownTags                   = x.UnknownTags,
+                         TableWithoutHeaderRowHandling = x.TableWithoutHeaderRowHandling)
+        Array.iter (cfg.PassThroughTags.Add >> ignore) x.PassThroughTags
+        Array.iter (cfg.WhitelistUriSchemes.Add >> ignore) x.WhitelistUriSchemes
+        x.Converter <- Converter <| cfg
 
     // optional: handle each pipeline value (e.g. InputObject)
     override x.ProcessRecord () =
