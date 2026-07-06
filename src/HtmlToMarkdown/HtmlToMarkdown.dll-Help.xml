@@ -142,6 +142,18 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
+          <maml:name>ProgressAction</maml:name>
+          <maml:description>
+            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ActionPreference</command:parameterValue>
+          <dev:type>
+            <maml:name>ActionPreference</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
@@ -265,6 +277,18 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
+        <maml:name>ProgressAction</maml:name>
+        <maml:description>
+          <maml:para>{{ Fill ProgressAction Description }}</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ActionPreference</command:parameterValue>
+        <dev:type>
+          <maml:name>ActionPreference</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
     </command:parameters>
     <command:inputTypes>
       <command:inputType>
@@ -294,13 +318,25 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; '&lt;h1&gt;On Board&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;Ford&lt;li&gt;Zaphod&lt;li&gt;Marvin&lt;/ul&gt;' |Convert-HtmlToMarkdown
+        <dev:code>'&lt;h1&gt;On Board&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;Ford&lt;li&gt;Zaphod&lt;li&gt;Marvin&lt;/ul&gt;' |Convert-HtmlToMarkdown
 
 # On Board
 
 - Ford
 - Zaphod
 - Marvin</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>Invoke-RestMethod https://google.com/ |Convert-HtmlToCommonMark -UnknownTags Bypass
+
+1. [Search](https://www.google.com/webhp?tab=ww)
+2. [Images](https://www.google.com/imghp?hl=en&amp;tab=wi)
+3. [Maps](https://maps.google.com/maps?hl=en&amp;tab=wl)
+...</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
         </dev:remarks>
