@@ -10,6 +10,11 @@ on:
     paths: ['scripts/**','src/**','test/**']
   workflow_dispatch: {}
 
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
 jobs:
   call-workflow:
     uses: brianary/actions/.github/workflows/continuous-integration.yml@main
