@@ -1,19 +1,15 @@
-name: .NET build and test
-on: push
+name: 🩺 Continuous integration ⏩
+
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/**','src/**','test/**']
+  pull_request:
+    types: [opened, reopened]
+    branches: [main]
+    paths: ['scripts/**','src/**','test/**']
+  workflow_dispatch: {}
+
 jobs:
-  continuous-integration:
-    name: Build and test
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-          os: [ubuntu-latest, windows-latest]
-    permissions:
-      contents: read
-      issues: read
-      checks: write
-      pull-requests: write
-    steps:
-      - name: .NET CI
-        uses: brianary/dotnet-ci@v1
-        with:
-          test-target: test
+  call-workflow:
+    uses: brianary/actions/.github/workflows/continuous-integration.yml@main
