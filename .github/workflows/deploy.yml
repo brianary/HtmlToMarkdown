@@ -1,15 +1,17 @@
-name: Publish module to PowerShell Gallery
+name: 📦 Publish module to PowerShell Gallery ⏩
+
 on:
-  workflow_run:
-    workflows: [".NET build and test"]
-    types: [completed]
-    branches: [main]
+  push:
+    tags:
+      - v[0-9]*
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
 jobs:
-  publish:
-    name: Publish to PowerShell Gallery
-    runs-on: windows-latest
-    steps:
-      - name: Publish module
-        uses: brianary/powershell-gallery-publish@v1
-        with:
-          gallery-key: ${{ secrets.gallerykey }}
+  call-workflow:
+    uses: brianary/actions/.github/workflows/powershell-gallery-publish.yml@main
+    with:
+        version: ${{ github.ref }}
