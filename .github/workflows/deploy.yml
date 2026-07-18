@@ -18,4 +18,4 @@ jobs:
         version: ${{ github.ref }}
     secrets:
         gallerykey: ${{ secrets.GALLERYKEY }}
-        token: ${{ github.token }}
+        gh_token: ${{ secrets.GITHUB_TOKEN }}
