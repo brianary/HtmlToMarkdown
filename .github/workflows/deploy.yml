@@ -10,6 +10,7 @@ permissions:
   security-events: write
   actions: read
 
+
 jobs:
   call-workflow:
     uses: brianary/actions/.github/workflows/powershell-gallery-publish.yml@main
@@ -17,3 +18,4 @@ jobs:
         version: ${{ github.ref }}
     secrets:
         gallerykey: ${{ secrets.GALLERYKEY }}
+        token: ${{ github.token }}
