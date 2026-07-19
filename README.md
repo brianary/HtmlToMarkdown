@@ -2,7 +2,7 @@ HtmlToMarkdown
 ==============
 
 <!-- To publish to PowerShell Gallery, commit an update to the .psd1 file -->
-<img src="docs/HtmlToMarkdown.svg" alt="HtmlToMarkdown icon" align="right" />
+<img src="images/HtmlToMarkdown.svg" alt="HtmlToMarkdown icon" align="right" />
 
 <!-- Optional badges: -->
 [![PowerShell Edition](https://img.shields.io/badge/PSEdition-Desktop%2FCore-blue.svg)](https://www.powershellgallery.com/packages/HtmlToMarkdown/)
@@ -17,7 +17,7 @@ which uses the [HTML Agility Pack](https://html-agility-pack.net/).
 
 To install: `Install-Module HtmlToMarkdown`
 
-![example usage of HtmlToMarkdown](docs/HtmlToMarkdown.gif)
+![example usage of HtmlToMarkdown](images/HtmlToMarkdown.gif)
 
 Cmdlets
 -------
