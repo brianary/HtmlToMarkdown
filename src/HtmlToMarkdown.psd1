@@ -19,6 +19,7 @@ AliasesToExport = @()
 FileList = @(
     'HtmlToMarkdown.dll'
     'HtmlToMarkdown.dll-Help.xml'
+    'ReverseMarkdown.dll'
 )
 PrivateData = @{
     PSData = @{

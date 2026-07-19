@@ -1,4 +1,4 @@
-name: 📦 Publish module to PowerShell Gallery ⏩
+﻿name: 📦 Publish module to PowerShell Gallery ⏩
 
 on:
   push:
@@ -10,7 +10,6 @@ permissions:
   security-events: write
   actions: read
 
-
 jobs:
   call-workflow:
     uses: brianary/actions/.github/workflows/powershell-gallery-publish.yml@main
@@ -19,3 +18,4 @@ jobs:
     secrets:
         gallerykey: ${{ secrets.GALLERYKEY }}
         gh_token: ${{ secrets.GITHUB_TOKEN }}
+

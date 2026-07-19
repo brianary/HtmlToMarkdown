@@ -21,29 +21,6 @@
     <None Include="$(MSBuildProjectName).dll-Help.xml" Pack="true" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
-  <Target Name="SetAssemblyVersion" BeforeTargets="GetAssemblyVersion">
-    <Exec Command="pwsh -noni -nop -c &quot;Import-LocalizedData -BindingVariable m -FileName $(MSBuildProjectName); (gv m -va).ModuleVersion&quot;" ConsoleToMSBuild="true" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true">
-      <Output TaskParameter="ConsoleOutput" PropertyName="Version" />
-    </Exec>
-  </Target>
-
-  <Target Name="doc" DependsOnTargets="Documentation" />
-
-  <Target Name="Documentation" DependsOnTargets="Publish">
-    <Copy SourceFiles="$(OutputPath)\publish\FSharp.Core.dll" DestinationFolder="$(OutputPath)" />
-    <Copy SourceFiles="$(OutputPath)\publish\ReverseMarkdown.dll" DestinationFolder="$(OutputPath)" />
-    <Exec Command="pwsh -noni -nop -c &quot;Import-Module (Resolve-Path $(OutputPath)*.psd1); New-MarkdownHelp -Module $(MSBuildProjectName) -OutputFolder ..\..\docs -ea 0; Update-MarkdownHelp ..\..\docs; New-ExternalHelp ..\..\docs -OutputPath . -Force&quot;" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
-  </Target>
-
-  <Target Name="test" DependsOnTargets="Pester" />
-
-  <Target Name="Pester" DependsOnTargets="Publish" Condition="'$(Configuration)' == 'Debug'">
-    <Copy SourceFiles="$(OutputPath)\publish\FSharp.Core.dll" DestinationFolder="$(OutputPath)" />
-    <Copy SourceFiles="$(OutputPath)\publish\ReverseMarkdown.dll" DestinationFolder="$(OutputPath)" />
-    <Exec Command="pwsh -noni -nop -c &quot;cd ..\..; Invoke-Pester -Configuration @{TestResult=@{Enabled=!0}}&quot;" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
-    <Exec Command="powershell -noni -nop -c &quot;cd ..\..; Invoke-Pester -Configuration @{TestResult=@{Enabled=!0}}&quot;" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" Condition=" '$(OS)' == 'Windows_NT' " />
-  </Target>
-
   <ItemGroup>
     <PSModulePath Include="$(PSModulePath)" Exclude="C:\Program Files\**;C:\Windows\**;C:\ProgramData\chocolatey\**" />
   </ItemGroup>
