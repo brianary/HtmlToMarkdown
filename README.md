@@ -1,7 +1,6 @@
 HtmlToMarkdown
 ==============
 
-<!-- To publish to PowerShell Gallery, commit an update to the .psd1 file -->
 <img src="images/HtmlToMarkdown.svg" alt="HtmlToMarkdown icon" align="right" />
 
 <!-- Optional badges: -->
